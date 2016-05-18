@@ -39,7 +39,7 @@ public class RGBMatrix {
 	}
 	public void setImage(BufferedImage bi){
 		this.bi=bi;
-		m=new RGBelement[bi.getHeight()][bi.getWidth()];
+		m=new RGBelement[bi.getWidth()][bi.getHeight()];
 		for(int i=0;i<m.length;i++){
 			for(int j=0;j<m[i].length;j++){
 				int[] RGB=getRGB(i,j);
@@ -49,7 +49,7 @@ public class RGBMatrix {
 		}
 		//对矩阵m执行变换操作
 		mc.setMatrix(m);
-		mc.conversion();
+		m=mc.conversion();
 		for(int i=0;i<m.length;i++){
 			for(int j=0;j<m[i].length;j++){
 				setRGB(i,j);
